@@ -40,17 +40,23 @@ Load all the .fif files contains in the folder with
 
 ```load_multi(filesDir, spatial=, spectral=, channels=filter_channels, n_jobs=n_jobs)``` 
 
-and apply a spectral and a spatial filter. Provide the on the eeg channels contained in 
+and apply a spectral and a spatial filter on the eeg channels. Select them froom the list: 
 
-```['TRIGGER', 'P3', 'C3', 'F3', 'Fz', 'F4', 'C4', 'P4', 'Cz', 'Pz', 'Fp1', 'Fp2', 'T3', 'T5', 'O1', 'O2', 'X3', 'X2', 'F7', 'F8', 'X1', 'A2', 'T6', 'T4']``` (10-20 international layout)
+```['TRIGGER', 'P3', 'C3', 'F3', 'Fz', 'F4', 'C4', 'P4', 'Cz', 'Pz', 'Fp1', 'Fp2', 'T3', 'T5', 'O1', 'O2', 'X3', 'X2', 'F7', 'F8', 'X1', 'A2', 'T6', 'T4']``` 
+
+The cap layout is the [10-20 international layout](https://en.wikipedia.org/wiki/10%E2%80%9320_system_(EEG)).
 
 The runs are concatenated in a mne raw format ```raw``` and the ```events``` are extracted.
 
 
 ### Time-frequency analysis
 
-Rythmic neural activity within the alpha [8-12 Hz] and the beta [15-25 Hz] over the sensorymotor cortex is modulated during actual and imagined movements. Event-related desynchronisation (ERS) and event-related synchronisation (ERS) are short-lasting 
-attenuation or augmentation of these rythms. ERD/S are shown on a spectrogram normalized by the baseline, computed few sec before the event. It has been shown that there is a contralateral dominance of mu and beta ERD and a ipsilateral dominance of mu ERS. 
+Rythmic neural activity within the alpha [8-12 Hz] and the beta [15-25 Hz] over the sensorymotor cortex is modulated during actual and imagined movements. 
+
+Event-related desynchronisation (ERS) and event-related synchronisation (ERS) are short-lasting 
+attenuation or augmentation of these rythms. 
+
+ERD/S are shown on a spectrogram normalized by the baseline, computed few sec before the event. It has been shown that there is a contralateral dominance of mu and beta ERD and a ipsilateral dominance of mu ERS. 
 
 Fill the funtion erds() and look to the spectrogram. 
 
@@ -58,7 +64,9 @@ Fill the funtion erds() and look to the spectrogram.
 
 The classification algorithm used is the [Random Forest](https://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm#overview).
 
-In order to estimate its accuracy, a k-fold Cross-Validation is used, where for each fold the data is split into a training and a testing set. The algorithm is trained on the training set and tested on the testing. The average accuracy over the k folds estimates
+In order to estimate its accuracy, a [k-fold Cross-Validation](https://towardsdatascience.com/cross-validation-70289113a072) is used, where for each fold the data is split into a training and a testing set. 
+
+The algorithm is trained on the training set and tested on the testing. The average accuracy over the k folds estimates
 the real accuracy. At the end the algorithm is retrained on the complete dataset before being used.
 
 Fill the function train() and look to the accuracy and the important features.
