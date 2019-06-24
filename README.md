@@ -42,7 +42,7 @@ Load all the .fif files contains in the folder with
 
 and apply a spectral and a spatial filter. Provide the on the eeg channels contained in 
 
-```['TRIGGER', 'P3', 'C3', 'F3', 'Fz', 'F4', 'C4', 'P4', 'Cz', 'Pz', 'Fp1', 'Fp2', 'T3', 'T5', 'O1', 'O2', 'X3', 'X2', 'F7', 'F8', 'X1', 'A2', 'T6', 'T4']``` (10-20 internaitonal layout)
+```['TRIGGER', 'P3', 'C3', 'F3', 'Fz', 'F4', 'C4', 'P4', 'Cz', 'Pz', 'Fp1', 'Fp2', 'T3', 'T5', 'O1', 'O2', 'X3', 'X2', 'F7', 'F8', 'X1', 'A2', 'T6', 'T4']``` (10-20 international layout)
 
 The runs are concatenated in a mne raw format ```raw``` and the ```events``` are extracted.
 
